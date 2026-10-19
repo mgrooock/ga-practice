@@ -1,0 +1,701 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PLATE STUDIO｜初月0円の完全個室パーソナルジム</title>
+    <meta name="description" content="GA4学習用の架空LPです。" />
+
+    <!-- ============================================================
+  GA4 設定（ここだけ書き換えればOK）
+  MODE: 'gtag' = gtag.js で直接計測 / 'gtm' = GTM経由 / 'off' = ログ表示のみ
+  ============================================================ -->
+    <script>
+      window.GA_CONFIG = {
+        MODE: "off", // 'gtag' | 'gtm' | 'off'
+        GA4_ID: "G-XXXXXXXXXX", // gtag モードで使う測定ID
+        GTM_ID: "GTM-XXXXXXX", // gtm モードで使うコンテナID
+        DEBUG: true, // true で DebugView に表示されます
+      };
+    </script>
+    <script>
+      (function () {
+        var c = window.GA_CONFIG;
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = function () {
+          dataLayer.push(arguments);
+        };
+        if (c.MODE === "gtag" && c.GA4_ID.indexOf("XXXX") < 0) {
+          var s = document.createElement("script");
+          s.async = true;
+          s.src = "https://www.googletagmanager.com/gtag/js?id=" + c.GA4_ID;
+          document.head.appendChild(s);
+          gtag("js", new Date());
+          gtag("config", c.GA4_ID, c.DEBUG ? { debug_mode: true } : {});
+        } else if (c.MODE === "gtm" && c.GTM_ID.indexOf("XXXX") < 0) {
+          if (c.DEBUG) dataLayer.push({ debug_mode: true });
+          dataLayer.push({ "gtm.start": Date.now(), event: "gtm.js" });
+          var g = document.createElement("script");
+          g.async = true;
+          g.src = "https://www.googletagmanager.com/gtm.js?id=" + c.GTM_ID;
+          document.head.appendChild(g);
+        }
+      })();
+    </script>
+
+    <style>
+      :root {
+        --ink: #10131a;
+        --paper: #f2f4f7;
+        --blue: #2237ff;
+        --yellow: #ffd21f;
+        --red: #e5322d;
+        --mute: #5b6270;
+        --line: #d5d9e0;
+        --f: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, system-ui, sans-serif;
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: var(--f);
+        color: var(--ink);
+        background: var(--paper);
+        line-height: 1.75;
+        font-size: 16px;
+      }
+      a {
+        color: inherit;
+      }
+      :focus-visible {
+        outline: 3px solid var(--blue);
+        outline-offset: 3px;
+      }
+      .wrap {
+        max-width: 1040px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      section {
+        padding: 72px 0;
+      }
+      h2 {
+        font-size: clamp(26px, 5vw, 40px);
+        font-weight: 900;
+        line-height: 1.3;
+        letter-spacing: -0.01em;
+        margin-bottom: 12px;
+      }
+      .lead {
+        color: var(--mute);
+        max-width: 36em;
+        margin-bottom: 32px;
+      }
+
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        background: var(--ink);
+        color: #fff;
+      }
+      header .wrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 56px;
+      }
+      .logo {
+        font-weight: 900;
+        letter-spacing: 0.04em;
+        text-decoration: none;
+      }
+      .btn {
+        display: inline-block;
+        background: var(--yellow);
+        color: var(--ink);
+        font-weight: 900;
+        text-decoration: none;
+        padding: 14px 28px;
+        border: 0;
+        border-radius: 4px;
+        font: inherit;
+        font-weight: 900;
+        cursor: pointer;
+        transition: transform 0.12s;
+      }
+      .btn:active {
+        transform: translateY(2px);
+      }
+      .btn.sm {
+        padding: 8px 16px;
+        font-size: 14px;
+      }
+      .btn.blue {
+        background: var(--blue);
+        color: #fff;
+      }
+
+      .hero {
+        background: var(--blue);
+        color: #fff;
+        padding: 80px 0 88px;
+        overflow: hidden;
+      }
+      .hero h1 {
+        font-size: clamp(40px, 10vw, 104px);
+        font-weight: 900;
+        line-height: 1.08;
+        letter-spacing: -0.03em;
+      }
+      .hero h1 span {
+        display: block;
+      }
+      .hero h1 .y {
+        color: var(--yellow);
+      }
+      .hero p {
+        max-width: 30em;
+        margin: 24px 0 32px;
+        font-size: 18px;
+      }
+      .hero small {
+        display: block;
+        margin-top: 14px;
+        opacity: 0.8;
+      }
+
+      .video {
+        position: relative;
+        aspect-ratio: 16/9;
+        background: var(--ink);
+        border-radius: 6px;
+        overflow: hidden;
+        color: #fff;
+        display: grid;
+        place-items: center;
+      }
+      .video .stage {
+        text-align: center;
+        padding: 20px;
+      }
+      .video .stage b {
+        display: block;
+        font-size: clamp(20px, 4vw, 32px);
+        font-weight: 900;
+      }
+      .play {
+        width: 72px;
+        height: 72px;
+        border-radius: 50%;
+        border: 0;
+        background: var(--yellow);
+        cursor: pointer;
+        margin-bottom: 12px;
+        font-size: 28px;
+      }
+      .bar {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 8px;
+        background: #ffffff33;
+      }
+      .bar i {
+        display: block;
+        height: 100%;
+        width: 0;
+        background: var(--yellow);
+      }
+
+      .three {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 0;
+        border-top: 3px solid var(--ink);
+      }
+      .three div {
+        padding: 24px 24px 24px 0;
+      }
+      .three h3 {
+        font-size: 20px;
+        font-weight: 900;
+        margin-bottom: 6px;
+      }
+      .three p {
+        color: var(--mute);
+      }
+
+      .tabs {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        margin-bottom: 0;
+      }
+      .tabs button {
+        font: inherit;
+        font-weight: 700;
+        padding: 12px 22px;
+        border: 2px solid var(--ink);
+        border-bottom: 0;
+        background: transparent;
+        cursor: pointer;
+        border-radius: 6px 6px 0 0;
+      }
+      .tabs button[aria-selected="true"] {
+        background: var(--ink);
+        color: #fff;
+      }
+      .panel {
+        border: 2px solid var(--ink);
+        padding: 28px;
+        background: #fff;
+        border-radius: 0 6px 6px 6px;
+      }
+      .panel[hidden] {
+        display: none;
+      }
+      .panel h3 {
+        font-size: 22px;
+        font-weight: 900;
+      }
+      .panel ul {
+        margin: 12px 0 20px 1.2em;
+        color: var(--mute);
+      }
+      .price {
+        font-size: 28px;
+        font-weight: 900;
+      }
+
+      .faq details {
+        border-bottom: 1px solid var(--line);
+        padding: 16px 0;
+      }
+      .faq summary {
+        cursor: pointer;
+        font-weight: 700;
+      }
+      .faq p {
+        color: var(--mute);
+        margin-top: 8px;
+      }
+
+      .formbox {
+        background: var(--ink);
+        color: #fff;
+        border-radius: 6px;
+        padding: 40px 28px;
+      }
+      .formbox h2 {
+        color: var(--yellow);
+      }
+      form {
+        display: grid;
+        gap: 18px;
+        max-width: 480px;
+        margin-top: 20px;
+      }
+      label {
+        display: grid;
+        gap: 6px;
+        font-weight: 700;
+        font-size: 14px;
+      }
+      input,
+      select {
+        font: inherit;
+        padding: 12px;
+        border-radius: 4px;
+        border: 2px solid transparent;
+        background: #fff;
+        color: var(--ink);
+      }
+      input:invalid:not(:placeholder-shown) {
+        border-color: var(--red);
+      }
+      .thanks {
+        display: none;
+        background: var(--yellow);
+        color: var(--ink);
+        padding: 20px;
+        border-radius: 4px;
+        font-weight: 700;
+        max-width: 480px;
+      }
+      footer {
+        padding: 32px 0 100px;
+        color: var(--mute);
+        font-size: 13px;
+      }
+
+      /* 学習用イベントログ */
+      #dbg {
+        position: fixed;
+        right: 12px;
+        bottom: 12px;
+        z-index: 50;
+        width: min(360px, calc(100vw - 24px));
+        font:
+          12px/1.5 ui-monospace,
+          Menlo,
+          monospace;
+      }
+      #dbg button {
+        font: inherit;
+        background: var(--ink);
+        color: #fff;
+        border: 2px solid var(--yellow);
+        padding: 6px 12px;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      #dbg .log {
+        display: none;
+        margin-top: 6px;
+        max-height: 42vh;
+        overflow: auto;
+        background: #10131af2;
+        color: #e8ebf0;
+        border-radius: 6px;
+        padding: 8px;
+      }
+      #dbg.open .log {
+        display: block;
+      }
+      #dbg .log div {
+        padding: 4px 0;
+        border-bottom: 1px solid #ffffff22;
+        word-break: break-all;
+      }
+      #dbg .log b {
+        color: var(--yellow);
+      }
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+        .btn {
+          transition: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="wrap">
+        <a class="logo" href="#top">PLATE STUDIO</a>
+        <a class="btn sm" href="#form" data-cta="header_apply" data-loc="header">無料体験を予約</a>
+      </div>
+    </header>
+
+    <main id="top">
+      <div class="hero" data-section="hero">
+        <div class="wrap">
+          <h1><span>初月、</span><span class="y">0円で</span><span>始める。</span></h1>
+          <p>完全個室のパーソナルジム。60分のカウンセリングと初回トレーニングを、まるごと体験できます。</p>
+          <a class="btn" href="#form" data-cta="hero_apply" data-loc="hero">無料体験を予約する</a>
+          <small>入会の強制はありません。手ぶらで来店できます。</small>
+        </div>
+      </div>
+
+      <section data-section="video">
+        <div class="wrap">
+          <h2>60分で、何をするのか。</h2>
+          <p class="lead">体験の流れを30秒で紹介します（学習用のダミー動画です）。</p>
+          <div class="video" id="video">
+            <div class="stage">
+              <button class="play" id="playBtn" aria-label="動画を再生">▶</button>
+              <b id="vtitle">体験レッスンの流れ</b>
+            </div>
+            <div class="bar"><i id="vbar"></i></div>
+          </div>
+        </div>
+      </section>
+
+      <section data-section="features">
+        <div class="wrap">
+          <h2>続けられる理由は、3つ。</h2>
+          <div class="three" style="margin-top: 28px">
+            <div>
+              <h3>完全個室</h3>
+              <p>周りの目を気にせず、自分のペースで動けます。</p>
+            </div>
+            <div>
+              <h3>専属トレーナー</h3>
+              <p>毎回同じ担当者が、体の変化を記録します。</p>
+            </div>
+            <div>
+              <h3>食事のアドバイス</h3>
+              <p>制限ではなく、今の食事を少しずつ整えます。</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section data-section="programs">
+        <div class="wrap">
+          <h2>目的に合わせて、選べます。</h2>
+          <p class="lead">タブを切り替えると、プログラムの内容と料金を確認できます。</p>
+          <div class="tabs" role="tablist">
+            <button role="tab" aria-selected="true" data-tab="diet">ダイエット</button>
+            <button role="tab" aria-selected="false" data-tab="muscle">筋力アップ</button>
+            <button role="tab" aria-selected="false" data-tab="posture">姿勢改善</button>
+          </div>
+          <div class="panel" data-panel="diet" role="tabpanel">
+            <h3>ダイエットコース</h3>
+            <ul>
+              <li>週2回・8週間</li>
+              <li>体組成の測定つき</li>
+              <li>食事記録のフィードバック</li>
+            </ul>
+            <p class="price">月額 39,800円</p>
+            <br />
+            <a class="btn blue" href="#form" data-cta="program_diet" data-loc="programs">このコースで相談する</a>
+          </div>
+          <div class="panel" data-panel="muscle" role="tabpanel" hidden>
+            <h3>筋力アップコース</h3>
+            <ul>
+              <li>週2回・12週間</li>
+              <li>ベンチプレスなど基本種目を習得</li>
+              <li>トレーニング記録の共有</li>
+            </ul>
+            <p class="price">月額 42,800円</p>
+            <br />
+            <a class="btn blue" href="#form" data-cta="program_muscle" data-loc="programs">このコースで相談する</a>
+          </div>
+          <div class="panel" data-panel="posture" role="tabpanel" hidden>
+            <h3>姿勢改善コース</h3>
+            <ul>
+              <li>週1回・8週間</li>
+              <li>肩こり・腰の違和感に対応</li>
+              <li>自宅でできるストレッチ動画つき</li>
+            </ul>
+            <p class="price">月額 24,800円</p>
+            <br />
+            <a class="btn blue" href="#form" data-cta="program_posture" data-loc="programs">このコースで相談する</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="faq" data-section="faq">
+        <div class="wrap">
+          <h2>よくある質問</h2>
+          <details>
+            <summary>運動経験がなくても大丈夫ですか？</summary>
+            <p>はい。初回は体力測定と基本動作の確認から始めます。</p>
+          </details>
+          <details>
+            <summary>体験後に勧誘はありますか？</summary>
+            <p>入会はご自宅で検討いただけます。当日の契約は必須ではありません。</p>
+          </details>
+          <details>
+            <summary>服装や持ち物を教えてください。</summary>
+            <p>ウェア・シューズ・タオルは無料でお貸しします。</p>
+          </details>
+        </div>
+      </section>
+
+      <section data-section="form" id="form">
+        <div class="wrap">
+          <div class="formbox">
+            <h2>無料体験を予約する</h2>
+            <p>1分で完了します。担当者から1営業日以内にご連絡します。</p>
+            <form id="leadForm">
+              <label>お名前<input name="name" required autocomplete="name" placeholder="山田 太郎" /></label>
+              <label>メールアドレス<input name="email" type="email" required autocomplete="email" placeholder="taro@example.com" /></label>
+              <label
+                >気になるコース
+                <select name="plan" required>
+                  <option value="">選択してください</option>
+                  <option value="diet">ダイエット</option>
+                  <option value="muscle">筋力アップ</option>
+                  <option value="posture">姿勢改善</option>
+                </select>
+              </label>
+              <button class="btn" type="submit">無料体験を予約する</button>
+            </form>
+            <div class="thanks" id="thanks">送信ありがとうございます。（学習用のため、実際にはデータは送信されません）</div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer><div class="wrap">© PLATE STUDIO（架空のサービスです／GA4学習用）</div></footer>
+
+    <!-- イベントログパネル -->
+    <div id="dbg">
+      <button id="dbgBtn" type="button">イベントログ <span id="dbgCnt">0</span></button>
+      <div class="log" id="dbgLog" aria-live="polite"></div>
+    </div>
+
+    <script>
+      (function () {
+        var C = window.GA_CONFIG;
+        var cnt = 0;
+        var logEl = document.getElementById("dbgLog");
+
+        /* すべてのイベントはこの関数を通ります。ここを読めば計測の仕組みが分かります */
+        function track(name, params) {
+          params = params || {};
+          if (C.MODE === "gtag") {
+            gtag("event", name, params);
+          } else if (C.MODE === "gtm") {
+            var o = { event: name };
+            for (var k in params) o[k] = params[k];
+            dataLayer.push(o);
+          }
+          cnt++;
+          document.getElementById("dbgCnt").textContent = cnt;
+          var d = document.createElement("div");
+          var t = new Date().toLocaleTimeString("ja-JP");
+          d.innerHTML = t + " <b></b> <span></span>";
+          d.children[0].textContent = name;
+          d.children[1].textContent = JSON.stringify(params);
+          logEl.insertBefore(d, logEl.firstChild);
+          if (window.console) console.log("[GA4]", C.MODE, name, params);
+        }
+
+        document.getElementById("dbgBtn").addEventListener("click", function () {
+          document.getElementById("dbg").classList.toggle("open");
+        });
+
+        /* 1. スクロール深度（25/50/75/100%） */
+        var marks = [25, 50, 75, 100],
+          sent = {};
+        window.addEventListener(
+          "scroll",
+          function () {
+            var h = document.documentElement;
+            var pct = ((h.scrollTop + window.innerHeight) / h.scrollHeight) * 100;
+            marks.forEach(function (m) {
+              if (pct >= m - 1 && !sent[m]) {
+                sent[m] = 1;
+                track("scroll_depth", { percent_scrolled: m });
+              }
+            });
+          },
+          { passive: true },
+        );
+
+        /* 2. セクション表示 */
+        var seen = {};
+        var io = new IntersectionObserver(
+          function (es) {
+            es.forEach(function (e) {
+              var id = e.target.getAttribute("data-section");
+              if (e.isIntersecting && !seen[id]) {
+                seen[id] = 1;
+                track("section_view", { section_name: id });
+              }
+            });
+          },
+          { threshold: 0.4 },
+        );
+        document.querySelectorAll("[data-section]").forEach(function (el) {
+          io.observe(el);
+        });
+
+        /* 3. CTAクリック */
+        document.querySelectorAll("[data-cta]").forEach(function (el) {
+          el.addEventListener("click", function () {
+            track("cta_click", {
+              cta_id: el.getAttribute("data-cta"),
+              cta_text: el.textContent.trim(),
+              cta_location: el.getAttribute("data-loc"),
+            });
+          });
+        });
+
+        /* 4. タブ切替 */
+        var tabs = document.querySelectorAll("[data-tab]");
+        tabs.forEach(function (b) {
+          b.addEventListener("click", function () {
+            var name = b.getAttribute("data-tab");
+            tabs.forEach(function (x) {
+              x.setAttribute("aria-selected", x === b ? "true" : "false");
+            });
+            document.querySelectorAll("[data-panel]").forEach(function (p) {
+              p.hidden = p.getAttribute("data-panel") !== name;
+            });
+            track("tab_switch", { tab_name: name });
+          });
+        });
+
+        /* 5. FAQ開閉 */
+        document.querySelectorAll(".faq details").forEach(function (d) {
+          d.addEventListener("toggle", function () {
+            if (d.open) track("faq_open", { question: d.querySelector("summary").textContent });
+          });
+        });
+
+        /* 6. 動画（ダミー：12秒で終了） */
+        var playing = false,
+          started = false,
+          elapsed = 0,
+          total = 12000,
+          timer = null,
+          vmarks = {};
+        var pb = document.getElementById("playBtn"),
+          bar = document.getElementById("vbar");
+        pb.addEventListener("click", function () {
+          if (!playing) {
+            playing = true;
+            pb.textContent = "❚❚";
+            pb.setAttribute("aria-label", "一時停止");
+            if (!started) {
+              started = true;
+              track("video_start", { video_title: "trial_flow", video_duration: total / 1000 });
+            }
+            timer = setInterval(function () {
+              elapsed += 200;
+              var p = Math.min((elapsed / total) * 100, 100);
+              bar.style.width = p + "%";
+              [25, 50, 75].forEach(function (m) {
+                if (p >= m && !vmarks[m]) {
+                  vmarks[m] = 1;
+                  track("video_progress", { video_title: "trial_flow", video_percent: m });
+                }
+              });
+              if (p >= 100) {
+                clearInterval(timer);
+                playing = false;
+                pb.textContent = "▶";
+                track("video_complete", { video_title: "trial_flow" });
+              }
+            }, 200);
+          } else {
+            playing = false;
+            clearInterval(timer);
+            pb.textContent = "▶";
+            pb.setAttribute("aria-label", "動画を再生");
+            track("video_pause", { video_title: "trial_flow", video_percent: Math.round((elapsed / total) * 100) });
+          }
+        });
+
+        /* 7. フォーム（開始 → 送信） */
+        var form = document.getElementById("leadForm"),
+          started2 = false;
+        form.addEventListener("focusin", function () {
+          if (!started2) {
+            started2 = true;
+            track("form_start", { form_id: "lead_form" });
+          }
+        });
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+          var plan = form.elements.plan.value;
+          /* 個人情報（名前・メール）はGA4に送らないのがルールです */
+          track("generate_lead", { form_id: "lead_form", plan: plan, value: 1, currency: "JPY" });
+          form.style.display = "none";
+          document.getElementById("thanks").style.display = "block";
+        });
+      })();
+    </script>
+  </body>
+</html>
